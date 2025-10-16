@@ -106,9 +106,11 @@ def register_or_get_known_face(frame_bgr: np.ndarray | None = None):
             sim = compare_embeddings(avg_emb, known)
             if sim > best_sim:
                 best_sim, best_idx = sim, idx
+        print("Best sim = ", best_sim)
 
         if best_idx >= 0 and best_sim >= SIMILARITY_THRESHOLD:
-            return known_faces[best_idx].copy()
+            print("Existing face Match")
+            return known_faces[best_idx]
 
         known_faces.append(avg_emb.copy())
         return avg_emb
