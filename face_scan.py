@@ -4,7 +4,7 @@ from deepface import DeepFace
 
 # Config
 SAMPLE_COUNT = 5
-SIMILARITY_THRESHOLD = 0.85
+SIMILARITY_THRESHOLD = 0.77
 
 # In-memory DB (list of np.ndarray embeddings)
 known_faces: list[np.ndarray] = []
